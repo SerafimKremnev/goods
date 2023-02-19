@@ -10,6 +10,7 @@ import cn from "classnames";
 
 const Layout = ({children}: LayoutProps) => {
     const [burger, setBurger] = useState<boolean>(false);
+
     return (
         <div className={styles.wrapper}>
             <Header burger={burger} setBurger={setBurger} className={styles.header}/>
