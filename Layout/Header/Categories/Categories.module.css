@@ -1,0 +1,16 @@
+.categories {
+    color: var(--white);
+    background: var(--white);
+    transition: all 1s;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding-bottom: 15px;
+    justify-content: space-between;
+    transition: all .4s;
+}
+
+.categoriesActive {
+    color: var(--primary);
+    background: var(--gray);
+}

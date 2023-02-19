@@ -1,0 +1,63 @@
+.header {
+    margin: 10px 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+            "logo . info"
+            "category category category"
+            "categories categories categories"
+;
+    font-family: var(--secular);
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    color: var(--primary);
+    user-select: none;
+    grid-area: logo;
+}
+
+.icon {
+    height: 40px;
+    width: 40px;
+    fill: var(--primary);
+    cursor: pointer;
+}
+
+.info {
+    grid-area: info;
+    display: flex;
+    gap: 10px;
+
+}
+
+.categories {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    grid-area: category;
+    overflow: hidden;
+    transition: all .4s;
+}
+
+.category {
+    white-space: nowrap;
+    padding: 10px;
+}
+
+.allCategoriesBlock {
+    position: absolute;
+    top: -1000px;
+    width: 100%;
+    grid-area: categories;
+}
+
+.allCategoriesBlockOpen {
+    top: 0px;
+}
+
+.categoryOpenCategory {
+    background: var(--gray);
+}
