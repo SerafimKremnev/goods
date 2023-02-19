@@ -15,8 +15,7 @@ function Home({products, categories}: HomeProps): JSX.Element {
 
     return (
         <>
-            <img src='https://kartinkin.net/uploads/posts/2022-03/1646989877_4-kartinkin-net-p-dukhi-krasivie-kartinki-4.jpg' alt=""/>
-
+            Index Page
         </>
     );
 }

@@ -1,5 +1,5 @@
 
-export interface Product {
+export interface IProduct {
     id: number;
     title: string;
     description: string;
@@ -13,13 +13,14 @@ export interface Product {
     images: string[];
 }
 
+
 export interface AllProducts {
-    products: Product[];
+    products: IProduct[];
     total: number;
     skip: number;
     limit: number;
 }
 
 export interface Products {
-    products: Product[];
+    products: IProduct[];
 }

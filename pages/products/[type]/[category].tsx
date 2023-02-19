@@ -2,10 +2,11 @@ import React, {useEffect} from 'react';
 import withLayout from "../../../Layout/Layout";
 import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";
 import axios from "axios";
-import {AllProducts, Product} from "../../../interfaces/products.interface";
+import {AllProducts} from "../../../interfaces/products.interface";
 import {ParsedUrlQuery} from "querystring";
 import {useDispatch} from "react-redux";
 import {getCategory} from "../../../store/categorySlice";
+import ProductList from "../../../Components/ProductList/ProductList";
 
 const Category = ({ products, categories }: Category) => {
     const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const Category = ({ products, categories }: Category) => {
 
     return (
         <div>
-            {products && products.products.map(e => <div>{e.title}</div>)}
+            {products && <ProductList products={products}/>}
         </div>
     );
 };

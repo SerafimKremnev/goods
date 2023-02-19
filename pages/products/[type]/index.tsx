@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import withLayout from "../../../Layout/Layout";
 import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";
 import axios from "axios";
-import {AllProducts, Product} from "../../../interfaces/products.interface";
+import {AllProducts, IProduct} from "../../../interfaces/products.interface";
 import {ParsedUrlQuery} from "querystring";
 import {useDispatch} from "react-redux";
 import {getCategory} from "../../../store/categorySlice";
@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({params}: GetSta
             };
         }
 
-        const {data: product} = await axios.get<Product>(process.env.NEXT_PUBLIC_DOMAIN + `/products/${params.type}`);
+        const {data: product} = await axios.get<IProduct>(process.env.NEXT_PUBLIC_DOMAIN + `/products/${params.type}`);
         const {data: categories} = await axios.get<string[]>(process.env.NEXT_PUBLIC_DOMAIN + '/products/categories');
 
         if(!product) {
@@ -64,6 +64,6 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({params}: GetSta
 };
 
 export interface TypeProps {
-    product: Product,
+    product: IProduct,
     categories: string[]
 }

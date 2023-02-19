@@ -5,6 +5,7 @@ import {GetStaticProps} from "next";
 import {AllProducts} from "../../interfaces/products.interface";
 import {useDispatch} from "react-redux";
 import {getCategory} from "../../store/categorySlice";
+import ProductList from "../../Components/ProductList/ProductList";
 
 
 const Products = ({categories, products}: MensProps) => {
@@ -15,7 +16,7 @@ const Products = ({categories, products}: MensProps) => {
     }, []);
     return (
         <div>
-            {products&& products.products.map(p => <div>{p.title}</div>)}
+            {products && <ProductList products={products}/>}
         </div>
     );
 };

@@ -1,0 +1,39 @@
+.product {
+    padding: 10px;
+    background: var(--gray);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    width: 100%;
+    gap: 10px 0;
+    grid-template-areas:
+            "image image image"
+            "name name name"
+            "price . rating"
+            "button button button"
+    ;
+}
+
+.image {
+    grid-area: image;
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+}
+
+.price {
+    grid-area: price;
+}
+
+.name {
+    grid-area: name;
+}
+
+.rating {
+    grid-area: rating;
+}
+
+.button {
+    grid-area: button;
+}

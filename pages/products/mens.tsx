@@ -15,7 +15,7 @@ const Mens = ({categories}: MensProps) => {
     }, []);
     return (
         <div>
-            Womens
+            Mens
         </div>
     );
 };
