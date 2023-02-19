@@ -6,13 +6,16 @@ import styles from './Layout.module.css';
 import {HomeProps} from "../pages";
 import Main from "./Main/Main";
 import {TypeProps} from "../pages/products/[type]";
+import cn from "classnames";
 
 const Layout = ({children}: LayoutProps) => {
     const [burger, setBurger] = useState<boolean>(false);
     return (
         <div className={styles.wrapper}>
             <Header burger={burger} setBurger={setBurger} className={styles.header}/>
-            <Main className={styles.main}>
+            <Main className={cn(styles.main, {
+                [styles.mainBlock]: burger
+            })}>
                 {children}
             </Main>
             <Footer className={styles.footer}/>
