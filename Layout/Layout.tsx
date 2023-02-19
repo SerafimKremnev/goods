@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react';
+import React, {FunctionComponent, useState} from 'react';
 import {LayoutProps} from "./Layout.props";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -8,9 +8,10 @@ import Main from "./Main/Main";
 import {TypeProps} from "../pages/products/[type]";
 
 const Layout = ({children}: LayoutProps) => {
+    const [burger, setBurger] = useState<boolean>(false);
     return (
         <div className={styles.wrapper}>
-            <Header className={styles.header}/>
+            <Header burger={burger} setBurger={setBurger} className={styles.header}/>
             <Main className={styles.main}>
                 {children}
             </Main>

@@ -1,0 +1,36 @@
+.categories {
+    display: flex;
+    justify-content: space-between;
+    grid-area: category;
+    overflow: hidden;
+    transition: all .4s;
+}
+
+.categoryOpenCategory {
+    background: var(--gray);
+}
+
+.category {
+    white-space: nowrap;
+    padding: 10px;
+}
+
+@media (max-width: 900px) {
+    .categoryHidden {
+        display: none;
+    }
+    .categories {
+        justify-content: space-around;
+    }
+}
+@media (max-width: 500px) {
+    .categories {
+        display: none;
+    }
+    .categoriesOpen {
+        position: absolute;
+        width: 100%;
+        min-height: 100vh;
+        top: 0;
+    }
+}
