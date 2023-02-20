@@ -7,7 +7,7 @@ import {HomeProps} from "../pages";
 import Main from "./Main/Main";
 import {TypeProps} from "../pages/products/[type]";
 import cn from "classnames";
-
+//todo
 const Layout = ({children}: LayoutProps) => {
     const [burger, setBurger] = useState<boolean>(false);
 

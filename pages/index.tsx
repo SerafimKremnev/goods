@@ -19,7 +19,6 @@ function Home({products, categories}: HomeProps): JSX.Element {
         </>
     );
 }
-
 export default withLayout(Home);
 
 
