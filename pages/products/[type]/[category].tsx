@@ -1,5 +1,3 @@
-//@ts-nocheck
-//todo
 import React, {useEffect} from 'react';
 import withLayout from "../../../Layout/Layout";
 import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";

@@ -1,4 +1,3 @@
-//todo
 import React, {useEffect} from 'react';
 import withLayout from "../../Layout/Layout";
 import axios from "axios";

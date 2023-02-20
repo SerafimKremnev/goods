@@ -1,5 +1,3 @@
-//@ts-nocheck
-
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {AllProducts} from "../interfaces/products.interface";
 

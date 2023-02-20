@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {CheckboxProps} from "./Checkbox.props";
 import styles from './Checkbox.module.css';
 import {useDispatch} from "react-redux";

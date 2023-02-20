@@ -1,5 +1,3 @@
-//@ts-nocheck
-
 import React, {useEffect, useState} from 'react';
 import styles from './Sidebar.module.css';
 import {SidebarProps} from "./Sidebar.props";
