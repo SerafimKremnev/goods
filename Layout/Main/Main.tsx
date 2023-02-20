@@ -9,8 +9,6 @@ import Sort from './sort.svg';
 const Main = ({children, className, ...props}: MainProps) => {
     const [open, setOpen] = useState<boolean>(false);
 
-
-
     return (
         <main className={cn(className, styles.main)}>
             <Sidebar className={cn(styles.sidebar, {

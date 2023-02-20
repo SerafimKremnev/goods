@@ -12,7 +12,9 @@ const Mens = ({categories, products}: MensProps) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        products && dispatch(getProducts(products));
+        if(products) {
+            dispatch(getProducts(products));
+        }
         dispatch(getCategory(categories));
     }, []);
     return (
