@@ -1,6 +1,40 @@
 .main {
     padding: 20px 10px;
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 210px 1fr;
     gap: 20px;
+    position: relative;
 }
+
+.sort {
+    display: none;
+    width: 40px;
+    height: 40px;
+    fill: var(--primary);
+}
+
+
+@media (max-width: 850px) {
+    .sidebar {
+        display: none;
+        position: absolute;
+    }
+    .sidebarOpen {
+        display: block;
+        width: 100%;
+        top: 70px;
+        background: var(--yellow);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .main {
+        padding: 20px 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .sort {
+        display: block;
+    }
+}
+
