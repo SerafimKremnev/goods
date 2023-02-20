@@ -5,18 +5,20 @@ import {GetStaticProps} from "next";
 import {AllProducts} from "../../interfaces/products.interface";
 import {useDispatch} from "react-redux";
 import {getCategory} from "../../store/categorySlice";
+import {getProducts} from "../../store/productsSlice";
 
 
-const Mens = ({categories}: MensProps) => {
+const Mens = ({categories, products}: MensProps) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        products && dispatch(getProducts(products));
         dispatch(getCategory(categories));
     }, []);
     return (
-        <div>
+        <>
             Mens
-        </div>
+        </>
     );
 };
 

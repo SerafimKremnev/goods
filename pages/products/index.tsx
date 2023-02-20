@@ -3,21 +3,25 @@ import withLayout from "../../Layout/Layout";
 import axios from "axios";
 import {GetStaticProps} from "next";
 import {AllProducts} from "../../interfaces/products.interface";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getCategory} from "../../store/categorySlice";
 import ProductList from "../../Components/ProductList/ProductList";
+import {getProducts} from "../../store/productsSlice";
 
 
 const Products = ({categories, products}: MensProps) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        if(products){
+            dispatch(getProducts(products));
+        }
         dispatch(getCategory(categories));
     }, []);
     return (
-        <div>
+        <>
             {products && <ProductList products={products}/>}
-        </div>
+        </>
     );
 };
 

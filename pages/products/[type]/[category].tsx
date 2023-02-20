@@ -4,22 +4,26 @@ import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";
 import axios from "axios";
 import {AllProducts} from "../../../interfaces/products.interface";
 import {ParsedUrlQuery} from "querystring";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getCategory} from "../../../store/categorySlice";
 import ProductList from "../../../Components/ProductList/ProductList";
+import {getProducts} from "../../../store/productsSlice";
 
 const Category = ({ products, categories }: Category) => {
+
     const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getProducts(products));
+    }, [products]);
 
     useEffect(() => {
-        console.log(products)
         dispatch(getCategory(categories));
     }, []);
 
     return (
-        <div>
-            {products && <ProductList products={products}/>}
-        </div>
+        <>
+            {products.products && <ProductList products={products}/>}
+        </>
     );
 };
 

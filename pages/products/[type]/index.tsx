@@ -6,6 +6,7 @@ import {AllProducts, IProduct} from "../../../interfaces/products.interface";
 import {ParsedUrlQuery} from "querystring";
 import {useDispatch} from "react-redux";
 import {getCategory} from "../../../store/categorySlice";
+import {sortProducts} from "../../../store/productsSlice";
 
 const Type = ({ product, categories }: TypeProps) => {
     const dispatch = useDispatch();
@@ -14,9 +15,9 @@ const Type = ({ product, categories }: TypeProps) => {
         dispatch(getCategory(categories));
     }, []);
     return (
-        <div>
+        <>
             {product && product.title}
-        </div>
+        </>
     );
 };
 

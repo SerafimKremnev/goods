@@ -1,3 +1,25 @@
 .sidebar {
-    display: none;
+    display: block;
+}
+
+.title {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.brand {
+    max-height: 300px;
+    overflow: auto;
+}
+
+.brand::-webkit-scrollbar {
+    width: 10px;               /* ширина scrollbar */
+}
+.brand::-webkit-scrollbar-track {      /* цвет дорожки */
+    background: #ffffff;
+}
+.brand::-webkit-scrollbar-thumb {
+    background-color: #b7b7b7;    /* цвет плашки */
+    border-radius: 20px;       /* закругления плашки */
+    border: 3px solid var(--white);  /* padding вокруг плашки */
 }
