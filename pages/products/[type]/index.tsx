@@ -10,10 +10,10 @@ import {sortProducts} from "../../../store/productsSlice";
 
 const Type = ({ product, categories }: TypeProps) => {
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(getCategory(categories));
     }, []);
+
     return (
         <>
             {product && product.title}

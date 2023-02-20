@@ -11,6 +11,7 @@ import {getProducts} from "../../store/productsSlice";
 
 const Products = ({categories, products}: MensProps) => {
     const dispatch = useDispatch();
+    const stateCategory = useSelector(state => state.products.products);
 
     useEffect(() => {
         if(products){
@@ -20,7 +21,7 @@ const Products = ({categories, products}: MensProps) => {
     }, []);
     return (
         <>
-            {products && <ProductList products={products}/>}
+            {stateCategory.products && <ProductList products={stateCategory}/>}
         </>
     );
 };

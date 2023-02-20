@@ -14,15 +14,14 @@ const Category = ({ products, categories }: Category) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getProducts(products));
+        dispatch(getCategory(categories));
     }, [products]);
 
-    useEffect(() => {
-        dispatch(getCategory(categories));
-    }, []);
+    const stateCategory = useSelector(state => state.products.products);
 
     return (
         <>
-            {products.products && <ProductList products={products}/>}
+            {stateCategory.products && <ProductList products={stateCategory}/>}
         </>
     );
 };
