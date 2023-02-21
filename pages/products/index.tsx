@@ -32,7 +32,7 @@ export default withLayout(Products);
 
 export const getStaticProps: GetStaticProps<MensProps> = async () => {
     const {data: categories} = await axios.get<string[]>(process.env.NEXT_PUBLIC_DOMAIN + '/products/categories');
-    const {data: products} = await axios.get<AllProducts>(process.env.NEXT_PUBLIC_DOMAIN + '/products');
+    const {data: products} = await axios.get<AllProducts>(process.env.NEXT_PUBLIC_DOMAIN + '/products?limit=100');
     return {
         props: {
             products,

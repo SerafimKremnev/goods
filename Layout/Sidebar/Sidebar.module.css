@@ -8,6 +8,13 @@
     overflow: auto;
 }
 
+.sidebar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-content: start;
+}
+
 .brand::-webkit-scrollbar {
     width: 10px;               /* ширина scrollbar */
 }
