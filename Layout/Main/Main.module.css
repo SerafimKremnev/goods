@@ -12,7 +12,9 @@
     height: 40px;
     fill: var(--primary);
 }
+.sidebar {
 
+}
 
 @media (max-width: 850px) {
     .sidebar {
@@ -23,7 +25,8 @@
         display: block;
         width: 100%;
         top: 70px;
-        background: var(--yellow);
+        background: var(--gray-dark);
+        color: var(--white);
         padding: 20px;
         border-radius: 10px;
     }
