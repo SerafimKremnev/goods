@@ -8,8 +8,6 @@ const needCategory: string[] = [
     'smartphones', 'laptops', 'womens', 'mens', 'fragrances', 'furniture',
 ];
 
-
-
 const Menu = ({className, openCategory, setOpenCategory} : MenuProps) => {
 
     function onClose() {

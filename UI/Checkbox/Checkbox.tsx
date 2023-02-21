@@ -16,20 +16,20 @@ const Checkbox = ({id, children, className, products, category, setCategory, ...
     useEffect(() => {
         setChecked(false);
         setCategory([]);
-        dispatch(sortProducts([]))
+        dispatch(sortProducts([]));
     }, [router.asPath]);
 
     useEffect(() => {
         if(checked) {
             setCategory([...category, id]);
         } else {
-            const filterCategory = category.filter(e => e != id)
+            const filterCategory = category.filter(e => e != id);
             setCategory(filterCategory);
         }
     }, [checked]);
 
     useEffect(() => {
-        dispatch(sortProducts(category))
+        dispatch(sortProducts(category));
     }, [category]);
 
     return (

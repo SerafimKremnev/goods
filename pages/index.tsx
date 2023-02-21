@@ -10,7 +10,7 @@ function Home({products, categories}: HomeProps): JSX.Element {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getCategory(categories))
+        dispatch(getCategory(categories));
     }, []);
 
     return (

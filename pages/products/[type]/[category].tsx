@@ -1,3 +1,4 @@
+
 import React, {useEffect} from 'react';
 import withLayout from "../../../Layout/Layout";
 import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";
@@ -8,6 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getCategory} from "../../../store/categorySlice";
 import ProductList from "../../../Components/ProductList/ProductList";
 import {getProducts} from "../../../store/productsSlice";
+import {useProductsSelector} from "../../../store";
 
 const Category = ({ products, categories }: Category) => {
 
@@ -17,11 +19,11 @@ const Category = ({ products, categories }: Category) => {
         dispatch(getCategory(categories));
     }, [products]);
 
-    const stateCategory = useSelector(state => state.products.products);
+    const stateCategory = useProductsSelector((state) => state.products.products);
 
     return (
         <>
-            {stateCategory.products && <ProductList products={stateCategory}/>}
+            {stateCategory && <ProductList products={stateCategory}/>}
         </>
     );
 };
