@@ -26,14 +26,19 @@
     border-radius: 20px;       /* закругления плашки */
     border: 3px solid var(--white);  /* padding вокруг плашки */
 }
-
+.button {
+    display: none;
+}
 @media (max-width: 850px) {
+    .button {
+        display: block;
+    }
     .brand::-webkit-scrollbar-track {      /* цвет дорожки */
-        background: var(--gray-dark);
+        background: var(--gray);
     }
     .brand::-webkit-scrollbar-thumb {
         background-color: var(--white);    /* цвет плашки */
         border-radius: 20px;       /* закругления плашки */
-        border: 3px solid var(--gray-dark);  /* padding вокруг плашки */
+        border: 3px solid var(--gray);  /* padding вокруг плашки */
     }
 }

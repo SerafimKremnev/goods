@@ -1,11 +1,29 @@
 .main {
     padding: 20px 10px;
     display: grid;
-    grid-template-columns: 210px 1fr;
+    grid-template-columns: 210px auto 1fr;
     gap: 20px;
+    grid-template-areas:
+        "sidebar sort sort"
+        "sidebar main main"
+;
     position: relative;
 }
 
+.filter {
+    grid-area: sort;
+    display: flex;
+    justify-content: end;
+}
+
+.body {
+    grid-area: main;
+}
+.sortTwo {
+    width: 40px;
+    height: 40px;
+    fill: var(--primary);
+}
 .sort {
     display: none;
     width: 40px;
@@ -13,20 +31,75 @@
     fill: var(--primary);
 }
 .sidebar {
+    grid-area: sidebar;
+}
+.sortBy {
+    background: none;
+    font-family: var(--domine);
+    font-weight: 600;
+    border: none;
+    color: var(--primary);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.sortAdd {
+    display: none;
+    grid-template-columns: 1fr;
+    background: var(--gray);
+    border-radius: 8px;
+    gap: 5px;
+    border: 1px solid var(--gray-dark);
+    align-items: center;
+    position: absolute;
+    top: 70px;
 
 }
 
+.sortAddOpen {
+    display: grid;
+}
+
+.sortAdd  button{
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid var(--gray-dark);
+    text-align: left;
+    background: none;
+    font-family: var(--domine);
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 16px;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.sortAdd button:last-child {
+    border-bottom: none;
+}
 @media (max-width: 850px) {
     .sidebar {
         display: none;
         position: absolute;
+        grid-area: initial;
+        height: 100%;
+    }
+    .mainHidden {
+        height: 100vh;
+        overflow: hidden;
+    }
+    .filter {
+        justify-content: space-between;
     }
     .sidebarOpen {
         display: block;
         width: 100%;
         top: 70px;
-        background: var(--gray-dark);
-        color: var(--white);
+        background: var(--gray);
+        color: var(--primary);
         padding: 20px;
         border-radius: 10px;
     }

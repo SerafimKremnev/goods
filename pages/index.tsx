@@ -6,6 +6,7 @@ import {useDispatch} from "react-redux";
 import {useEffect} from "react";
 import {getCategory} from "../store/categorySlice";
 
+
 function Home({products, categories}: HomeProps): JSX.Element {
     const dispatch = useDispatch();
 
@@ -15,7 +16,7 @@ function Home({products, categories}: HomeProps): JSX.Element {
 
     return (
         <>
-            Index Page
+
         </>
     );
 }

@@ -1,11 +1,12 @@
-import React, { useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Sidebar.module.css';
 import {SidebarProps} from "./Sidebar.props";
 import cn from "classnames";
 import {useProductsSelector} from "../../store";
 import Sorting from "./Sorting/Sorting";
+import Button from "../../UI/Button/Button";
 
-const Sidebar = ({className, ...props}: SidebarProps) => {
+const Sidebar = ({open, setOpen, className, ...props}: SidebarProps) => {
     const products = useProductsSelector((state) => state.products.allProducts);
 
     function addBrands() {
@@ -43,6 +44,7 @@ const Sidebar = ({className, ...props}: SidebarProps) => {
                     <div className={styles.title}>Brand</div>
                     <div className={styles.brand}>{addBrands()}</div>
                 </div>
+                <Button className={styles.button} onClick={() => setOpen(!open)}>OK</Button>
             </div>
         </div>
     );
